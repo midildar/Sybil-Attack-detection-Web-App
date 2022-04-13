@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sybil Detection</title>
+    <link rel="icon" type="image/svg" href="{{ url_for('static', filename='images/bezier.svg') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate1.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/aos.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.timepicker.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flaticon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">SYBIL DETECTION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+            
+            {% if not current_user.is_authenticated %}
+            <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link">login In</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="nav-link">Portal</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="home-slider ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('../static/images/bg-01.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12  mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{{ url_for('index') }}">About</a></span> <span><a href="{{ url_for('dashboard') }}">Portal</a></span></p>
+              <h1 class="mb-3 bread">SYBIL</h1>
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="ftco-section-featured ">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+              <div class="item ">
+                  <img src="{{ url_for('static', filename='images/image44.jpg') }}" class="img-fluid" alt="">
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ">
+            <span class="subheading">Our Services</span>
+            <h2>Sybil Detect provides a fully featured Sybil detection platform!</h2>
+          </div>
+        </div>
+        
+
+        <section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter">
+          <div class="parallax-img d-flex align-items-center">
+            <div class="container">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-10 text-center heading-section heading-section-white">
+                  <h2 class="h1 font-weight-bold">Click here for advance visualization and analysis</h2>
+                  {% if current_user.is_authenticated %}
+                  <p><a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">DashBoard</a></p>
+                  {% endif %}
+                  {% if not current_user.is_authenticated %}
+                  <p><a href="{{ url_for('login') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">Sign In</a></p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="row mt-5">
+          <div class="col-md-4">
+            <h3 class="h5">#01 User Registration</h3>
+            <p>User is required to register and logged-in to access the system. User verification is done via email verification.</p>
+          </div>
+          <div class="col-md-4 ">
+            <h3 class="h5">#02 Live Data Fetch</h3>
+            <p>Fresh and live data is fetched every time an request is generated throu official API.</p>
+          </div>
+          <div class="col-md-4 ">
+            <h3 class="h5">#03 Advance Visualization</h3>
+            <p>Result is visualized and social graph is displayed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Company</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="#" class="py-2 d-block">Sign-in</a></li>
+                <li><a href="#" class="py-2 d-block">Register</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Contact Information</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Somewhere in the capital of the Pakistan</a></li>
+                <li><a href="#" class="py-2 d-block">sybildetection@gmail.com</a></li>
+                <li><a href="#" class="py-2 d-block">email@email.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Newsletter</h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.timepicker.min.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{ url_for('static', filename='js/google-map.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+  </body>
+</html>
