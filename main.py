@@ -74,11 +74,11 @@ app.config['images'] = imageFolder
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
-Api_Key = "0Spus1d0oea3ALOz3urj7Xaqt"  # consumer key
-Api_Key_Secret = "8M6XufFUEvXhu4dfjxFI2QbEBRjluhWZ2sgWNIrlUmHV4OcMDs"  # consumer secret
-Access_Token = "1035247680-h8IMZayZUmAq03OyKvsFtnporrR5Bz8EoCrzD6k"
-Access_Token_Secret = "SwMuZgWRcJqIOvQTPKhBBMRwjZhpFIUD5coWOMvt2RqnC"
-Bearer_Token="AAAAAAAAAAAAAAAAAAAAABh9UgEAAAAAwNipelKezQ4P4G6EsBqhK%2Betqk4%3D0spCg60mavcgDpsDDoaagAfTjBAu4ZlY7sWv9DqFJrHZCQiSjE"
+Api_Key = "input your key "  # consumer key
+Api_Key_Secret = "input your key"  # consumer secret
+Access_Token = "input your key"
+Access_Token_Secret = "input your key"
+Bearer_Token="input your key"
 auth = tweepy.OAuthHandler(Api_Key, Api_Key_Secret)
 auth.set_access_token(Access_Token, Access_Token_Secret)
 api = tweepy.API(auth)
